@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,6 +10,52 @@
     <!-- Bootstrap -->
     <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
 
+
+
+
+
+</head>
+<body>
+
+<div class="container" style="margin-top:30px">
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading"><h3 class="panel-title"><strong>Cálculo de IMC</strong></h3></div>
+            <div class="panel-body">
+                <form role="form" name="imcForm" id="imcForm">
+
+                    <div class="form-group">
+                        <label for="altura" class="col-sm-2 control-label">Altura</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="altura">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="peso" class="col-sm-2 control-label">Peso</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" name="peso">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sexo" class="col-sm-2 control-label">Sexo</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" name="sexo">
+                                <option>Masculino</option>
+                                <option>Feminino</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-primary">Calcular</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
 
         <%
                                 String temp;
@@ -59,56 +105,7 @@
 								}
 %>
 
-
-</head>
-<body>
-
-<div class="container" style="margin-top:30px">
-    <div class="col-md-4">
-        <div class="panel panel-default">
-            <div class="panel-heading"><h3 class="panel-title"><strong>Cálculo de IMC</strong></h3></div>
-            <div class="panel-body">
-                <form role="form" name="imcForm" id="imcForm">
-
-                    <div class="form-group">
-                        <label for="altura" class="col-sm-2 control-label">Altura</label>
-                        <div class="col-sm-10">
-                            <input type="number" class="form-control" name="altura">
-                        </div>
-                    </div>
-
-
-                    <div class="form-group">
-                        <label for="peso" class="col-sm-2 control-label">Peso</label>
-                        <div class="col-sm-10">
-                            <input type="number" class="form-control" name="peso">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="sexo" class="col-sm-2 control-label">Sexo</label>
-                        <div class="col-sm-10">
-                            <select class="form-control">
-                                <option>Masculino</option>
-                                <option>Feminino</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-10">
-                                <button type="submit" class="btn btn-primary">Calcular</button>
-                            </div>
-                        </div>
-
-    <div> <%=resultado%> </div>
-
-
-                    </div>
-                </form>
-            </div>
-
-
-
+    <div class="alert alert-success" role="alert" style="margin-top:45px"><%=resultado%></div>
         </div>
     </div>
 </div>
