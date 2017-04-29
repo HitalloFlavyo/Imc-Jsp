@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Cálculo de IMC</title>
+
+    <!-- Bootstrap -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+
+</head>
+<body>
+
+
+<script type="text/javascript">
+    function calcula_imc() {
+        var altura = document.imcForm.altura.value;
+        var peso = document.imcForm.peso.value;
+
+        var quadrado = (altura * altura);
+
+        var calculo = (peso / quadrado);
+
+        if (calculo < 18.5) {
+            alert("Você está magro com esse indice: " + calculo);
+        }
+        else if (calculo >= 18.5 && calculo < 24.9) {
+            alert("Você está normal com esse indice: " + calculo);
+        }
+
+        else if (calculo >= 25 && calculo < 29.9) {
+            alert("Você está com sobre peso com esse indice: " + calculo);
+        }
+        else if (calculo >= 30 && calculo < 39.9) {
+            alert("Você está com obesidade com esse indice: " + calculo);
+        }
+        else if (calculo > 40)
+            alert("Você estácom obesidade grave com esse indice: " + calculo);
+    }
+
+</script>
+
+
+<div class="container" style="margin-top:30px">
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading"><h3 class="panel-title"><strong>Cálculo de IMC</strong></h3></div>
+            <div class="panel-body">
+                <form role="form" name="imcForm" id="imcForm">
+
+                    <div class="form-group">
+                        <label for="altura" class="col-sm-2 control-label">Altura</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" id="altura">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="peso" class="col-sm-2 control-label">Peso</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" id="peso">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sexo" class="col-sm-2 control-label">Sexo</label>
+                        <div class="col-sm-10">
+                            <select class="form-control">
+                                <option>Masculino</option>
+                                <option>Feminino</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="submit" class="btn btn-primary" onclick="calcula_imc()">Calcular</button>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
